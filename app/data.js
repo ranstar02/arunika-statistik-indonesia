@@ -1,0 +1,107 @@
+// ARUNIKA — Statistik Indonesia. Semua angka dari BPS (Badan Pusat Statistik),
+// tahun 2024 kecuali disebut lain. Angka dibulatkan; lihat publikasi resmi BPS
+// untuk detail. Data inline — situs ini tidak memuat apa pun dari jaringan.
+window.ARUNIKA = {
+  meta: {
+    name: 'ARUNIKA',
+    tagline: 'Indonesia dalam angka — data resmi, dijelaskan dengan jernih.',
+    country: 'Indonesia',
+    source: 'Badan Pusat Statistik (BPS)',
+    sourceUrl: 'https://www.bps.go.id',
+    year: 2024,
+    updated: 'November 2026',
+  },
+  kpi: [
+    { label: 'Penduduk', value: '281,60', unit: 'juta jiwa', note: 'Hasil proyeksi penduduk 2024', route: '#/penduduk' },
+    { label: 'PDB', value: 'Rp22.139', unit: 'triliun', note: 'Atas dasar harga berlaku, 2024', route: '#/ekonomi' },
+    { label: 'Pertumbuhan ekonomi', value: '5,03', unit: '%', note: 'y-on-y, 2024', route: '#/ekonomi' },
+    { label: 'Inflasi', value: '1,57', unit: '%', note: 'y-on-y, Desember 2024', route: '#/ekonomi' },
+    { label: 'Tingkat pengangguran', value: '4,91', unit: '%', note: 'Agustus 2024', route: '#/kesejahteraan' },
+    { label: 'Penduduk miskin', value: '8,57', unit: '%', note: 'September 2024', route: '#/kesejahteraan' },
+    { label: 'Indeks Pembangunan Manusia', value: '75,02', unit: 'poin', note: 'Status: Tinggi, 2024', route: '#/kesejahteraan' },
+    { label: 'Harapan hidup', value: '74,0', unit: 'tahun', note: 'Perkiraan 2024', route: '#/kesejahteraan' },
+  ],
+  years: [2019, 2020, 2021, 2022, 2023, 2024],
+  population: [
+    { year: 2019, value: 266.91 }, { year: 2020, value: 270.20 }, { year: 2021, value: 272.25 },
+    { year: 2022, value: 275.77 }, { year: 2023, value: 278.69 }, { year: 2024, value: 281.60 },
+  ],
+  // Juta jiwa per tahun, untuk toggle di halaman Penduduk.
+  populationByYear: {
+    2019: { total: 266.91, age014: 25.4, age1564: 67.9, age65: 6.7, density: 140 },
+    2020: { total: 270.20, age014: 25.0, age1564: 68.0, age65: 7.0, density: 142 },
+    2021: { total: 272.25, age014: 24.7, age1564: 68.3, age65: 7.0, density: 143 },
+    2022: { total: 275.77, age014: 24.4, age1564: 68.5, age65: 7.1, density: 145 },
+    2023: { total: 278.69, age014: 24.2, age1564: 68.6, age65: 7.2, density: 146 },
+    2024: { total: 281.60, age014: 24.0, age1564: 68.8, age65: 7.2, density: 148 },
+  },
+  growth: [
+    { year: 2019, value: 5.02 }, { year: 2020, value: -2.07 }, { year: 2021, value: 3.70 },
+    { year: 2022, value: 5.31 }, { year: 2023, value: 5.05 }, { year: 2024, value: 5.03 },
+  ],
+  sectors: [
+    { name: 'Manufaktur', value: 18.67 },
+    { name: 'Perdagangan', value: 12.97 },
+    { name: 'Pertanian', value: 12.48 },
+    { name: 'Konstruksi', value: 9.92 },
+    { name: 'Pertambangan', value: 8.98 },
+    { name: 'Sektor lainnya', value: 37.98 },
+  ],
+  inflation: [
+    { year: 2019, value: 2.72 }, { year: 2020, value: 1.68 }, { year: 2021, value: 1.87 },
+    { year: 2022, value: 5.51 }, { year: 2023, value: 2.61 }, { year: 2024, value: 1.57 },
+  ],
+  trade: {
+    exports: 264.70, imports: 233.66, surplus: 31.04, reserves: 155.7,
+    note: 'Ekspor–impor dalam miliar dolar AS, 2024; cadangan devisa akhir 2024.',
+  },
+  poverty: [
+    { year: 2019, value: 9.22 }, { year: 2020, value: 10.19 }, { year: 2021, value: 9.71 },
+    { year: 2022, value: 9.57 }, { year: 2023, value: 9.03 }, { year: 2024, value: 8.57 },
+  ],
+  unemployment: [
+    { year: 2019, value: 5.28 }, { year: 2020, value: 7.07 }, { year: 2021, value: 6.49 },
+    { year: 2022, value: 5.86 }, { year: 2023, value: 5.32 }, { year: 2024, value: 4.91 },
+  ],
+  welfare: [
+    { label: 'Indeks Pembangunan Manusia', value: '75,02', unit: '', note: 'Status Tinggi — naik 0,72 poin dari 2023' },
+    { label: 'Angka harapan hidup', value: '74,0', unit: 'tahun', note: 'Perkiraan 2024' },
+    { label: 'Rata-rata lama sekolah', value: '9,21', unit: 'tahun', note: 'Penduduk usia 25 tahun ke atas, 2024' },
+    { label: 'Angka melek huruf', value: '96,0', unit: '%', note: 'Penduduk usia 15 tahun ke atas, 2024' },
+    { label: 'Prevalensi stunting', value: '19,8', unit: '%', note: 'Balita, Survei Status Gizi Indonesia 2024' },
+    { label: 'Rasio gini', value: '0,381', unit: '', note: 'September 2024 — ketimpangan menurun' },
+  ],
+  // 15 provinsi terpadat. Penduduk 2024 (juta jiwa), luas (km²).
+  provinces: [
+    { name: 'Jawa Barat', pop: 50.35, area: 37908 },
+    { name: 'Jawa Timur', pop: 41.81, area: 47803 },
+    { name: 'Jawa Tengah', pop: 38.36, area: 34337 },
+    { name: 'Sumatera Utara', pop: 15.59, area: 72981 },
+    { name: 'Banten', pop: 12.43, area: 9663 },
+    { name: 'DKI Jakarta', pop: 10.56, area: 664 },
+    { name: 'Sulawesi Selatan', pop: 9.41, area: 46717 },
+    { name: 'Lampung', pop: 9.35, area: 34624 },
+    { name: 'Sumatera Selatan', pop: 9.04, area: 91592 },
+    { name: 'Riau', pop: 6.96, area: 87024 },
+    { name: 'Kalimantan Barat', pop: 5.80, area: 147307 },
+    { name: 'Sumatera Barat', pop: 5.76, area: 42012 },
+    { name: 'Bali', pop: 4.34, area: 5780 },
+    { name: 'Kalimantan Timur', pop: 4.03, area: 127347 },
+    { name: 'DI Yogyakarta', pop: 3.76, area: 3133 },
+  ],
+  sources: [
+    { title: 'Statistik Indonesia 2025', publisher: 'BPS', note: 'Publikasi tahunan: penduduk, PDB, dan indikator utama.' },
+    { title: 'Keadaan Ketenagakerjaan Indonesia Agustus 2024', publisher: 'BPS', note: 'Tingkat pengangguran terbuka 4,91%.' },
+    { title: 'Profil Kemiskinan di Indonesia September 2024', publisher: 'BPS', note: 'Penduduk miskin 8,57%; rasio gini 0,381.' },
+    { title: 'Indeks Pembangunan Manusia 2024', publisher: 'BPS', note: 'IPM 75,02; harapan hidup dan lama sekolah.' },
+    { title: 'Berita Resmi Statistik — Inflasi & Perdagangan', publisher: 'BPS', note: 'Inflasi 1,57%; ekspor US$264,70 miliar; impor US$233,66 miliar.' },
+    { title: 'Survei Status Gizi Indonesia (SSGI) 2024', publisher: 'Kemenkes / BPS', note: 'Prevalensi stunting balita 19,8%.' },
+  ],
+  faq: [
+    { q: 'Dari mana angka-angka di situs ini berasal?', a: 'Semua angka berasal dari Badan Pusat Statistik (BPS) — publikasi Statistik Indonesia 2025, Berita Resmi Statistik, dan survei resmi lainnya. Setiap halaman mencantumkan sumbernya; angka dibulatkan untuk keterbacaan.' },
+    { q: 'Mengapa angka di sini bisa berbeda sedikit dengan situs BPS?', a: 'Karena pembulatan dan revisi berkala. BPS kadang merevisi angka setelah publikasi awal. Untuk keperluan resmi, selalu rujuk publikasi BPS di bps.go.id.' },
+    { q: 'Apa itu IPM dan mengapa nilainya 75,02?', a: 'Indeks Pembangunan Manusia mengukur tiga hal: umur panjang dan hidup sehat, pengetahuan, dan standar hidup layak. Nilai 75,02 (2024) menempatkan Indonesia pada status pembangunan manusia "Tinggi".' },
+    { q: 'Bagaimana cara mengunduh data provinsi?', a: 'Buka halaman Provinsi, lalu klik tombol "Unduh data (CSV)". Berkas CSV berisi 15 provinsi terpadat beserta penduduk, luas, dan kepadatannya, dan langsung terunduh dari peramban Anda — tanpa server.' },
+    { q: 'Apakah situs ini situs resmi BPS?', a: 'Bukan. ARUNIKA adalah situs penyajian data independen yang dibuat untuk kompetisi make.fun. Situs resmi BPS adalah bps.go.id.' },
+  ],
+};
